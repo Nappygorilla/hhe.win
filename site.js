@@ -75,7 +75,8 @@
 
 
   const syncActiveNavigation = () => {
-    const current = (window.location.pathname.split("/").pop() || "index.html").split("#")[0] || "index.html";
+    let current = (window.location.pathname.split("/").pop() || "index.html").split("#")[0] || "index.html";
+    if (current.toLowerCase() === "roblox.html" || current.toLowerCase() === "product.html") current = "store.html";
     document.querySelectorAll(".mainnav a, .mobile-menu-panel a").forEach((link) => {
       const raw = link.getAttribute("href") || "";
       const target = raw.split("#")[0].split("/").pop() || "index.html";
