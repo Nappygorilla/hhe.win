@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /account.html
+
 Sitemap: https://luna.win/sitemap.xml
