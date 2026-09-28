@@ -82,7 +82,47 @@
       const isNavPage = /^(index|features|browser-games|store|about|updates|faq|contact|login|register|key|account|status|legal|privacy|terms|roblox)\.html$/i.test(target);
       if (!isNavPage) return;
       link.classList.toggle("active", target.toLowerCase() === current.toLowerCase());
+      link.toggleAttribute("aria-current", target.toLowerCase() === current.toLowerCase());
     });
+  };
+
+  const initStoreFilters = () => {
+    const grid = document.querySelector("[data-store-grid]");
+    if (!grid) return;
+    const controls = document.querySelectorAll("[data-store-filter]");
+    const search = document.querySelector("[data-store-search]");
+    const count = document.querySelector("[data-store-count]");
+    const cards = Array.from(grid.querySelectorAll("[data-category]"));
+    let active = "all";
+
+    const render = () => {
+      const query = (search?.value || "").trim().toLowerCase();
+      let visible = 0;
+      cards.forEach((card) => {
+        const matchesCategory = active === "all" || card.dataset.category === active;
+        const haystack = (card.textContent || "").toLowerCase();
+        const matchesQuery = !query || haystack.includes(query);
+        const show = matchesCategory && matchesQuery;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      if (count) count.textContent = String(visible).padStart(2, "0") + " PRODUCTS SHOWN";
+    };
+
+    controls.forEach((control) => {
+      control.addEventListener("click", () => {
+        active = control.dataset.storeFilter || "all";
+        controls.forEach((item) => {
+          const selected = item === control;
+          item.classList.toggle("active", selected);
+          item.setAttribute("aria-pressed", String(selected));
+        });
+        render();
+      });
+    });
+
+    search?.addEventListener("input", render);
+    render();
   };
 
   window.addEventListener("scroll", updateProgress, { passive: true });
@@ -93,4 +133,5 @@
   enableCardMotion();
   bootTerminal();
   syncActiveNavigation();
+  initStoreFilters();
 })();
