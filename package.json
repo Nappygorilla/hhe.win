@@ -1,0 +1,13 @@
+{
+  "name": "luna-win-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix server install",
+    "migrate": "npm --prefix server run db:migrate",
+    "start": "npm --prefix server start"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
