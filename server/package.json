@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node --watch src/server.js"
+    "dev": "node --watch src/server.js",
+    "db:migrate": "node src/migrate.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
