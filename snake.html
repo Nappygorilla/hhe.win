@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snake — Luna.win</title>
+<link rel="stylesheet" href="style.css?v=20260928-12">
+<style>
+.game-page{min-height:calc(100vh - 72px);display:grid;place-items:center;padding:50px 0}
+.game-shell{width:min(620px,100%);border:1px solid #292929;background:#080808;padding:20px}
+.game-head{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-bottom:16px;border-bottom:1px solid #1b1b1b}
+.game-head h1{margin:0;font-size:42px;letter-spacing:-.07em}
+.game-head p{margin:4px 0 0;color:#666;font-size:11px}
+.game-score{font:11px var(--mono);text-transform:uppercase;color:#aaa;white-space:nowrap}
+.game-board{margin-top:18px;padding:10px;border:1px solid #202020;background:#050505}
+#snakeCanvas{display:block;width:100%;height:auto;aspect-ratio:1;background:#050505}
+.game-controls{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:14px}
+.game-controls span{color:#666;font-size:10px}
+.game-controls button,.game-controls a{font:800 9px var(--sans);text-transform:uppercase;border:1px solid #383838;padding:11px 14px;cursor:pointer}
+#snakeStart{background:#eee;color:#050505;border-color:#eee}
+.game-controls a{background:#080808;color:#aaa}
+.game-over{position:absolute;inset:0;display:none;place-items:center;background:rgba(0,0,0,.62);text-align:center}
+.game-over.open{display:grid}
+.game-over strong{display:block;font-size:30px;letter-spacing:-.05em}
+.game-over span{display:block;margin-top:6px;color:#aaa;font-size:11px}
+.board-wrap{position:relative}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="moon"></span><span>Luna<span class="dim">.win</span></span></a>
+    <nav class="mainnav">
+      <a href="index.html">Home</a><a href="features.html">Features</a><a class="active" href="browser-games.html">Browser Games</a><a href="store.html">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="login" href="login.html">Sign in</a><a class="nav-cta" href="key.html">Get Free Key <span>↗</span></a></div>
+    <details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel">
+      <a href="index.html">Home</a><a href="features.html">Features</a><a href="browser-games.html">Browser Games</a><a href="store.html">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+    </div></details>
+  </div>
+</header>
+<main class="game-page">
+  <section class="game-shell wrap">
+    <div class="game-head"><div><h1>Snake</h1><p>Classic browser game, built directly into Luna.win.</p></div><div class="game-score">Score: <strong id="snakeScore">0</strong></div></div>
+    <div class="board-wrap game-board"><canvas id="snakeCanvas" width="520" height="520"></canvas><div class="game-over" id="gameOver"><div><strong>Game over</strong><span>Press Restart or Space</span></div></div></div>
+    <div class="game-controls"><span>Arrow Keys / WASD</span><div><button id="snakeStart" type="button">Start game</button> <a href="browser-games.html">Back</a></div></div>
+  </section>
+</main>
+<script>
+(() => {
+  "use strict";
+  const canvas=document.getElementById("snakeCanvas"),ctx=canvas.getContext("2d"),scoreEl=document.getElementById("snakeScore"),start=document.getElementById("snakeStart"),overlay=document.getElementById("gameOver");
+  const grid=26,cell=canvas.width/grid;
+  let snake=[],food={x:0,y:0},dir={x:1,y:0},nextDir={x:1,y:0},score=0,timer=null,running=false;
+
+  function placeFood(){do{food={x:Math.floor(Math.random()*grid),y:Math.floor(Math.random()*grid)}}while(snake.some(s=>s.x===food.x&&s.y===food.y))}
+  function draw(){
+    ctx.fillStyle="#050505";ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.strokeStyle="#111";ctx.lineWidth=1;
+    for(let i=1;i<grid;i++){ctx.beginPath();ctx.moveTo(i*cell,0);ctx.lineTo(i*cell,canvas.height);ctx.stroke();ctx.beginPath();ctx.moveTo(0,i*cell);ctx.lineTo(canvas.width,i*cell);ctx.stroke();}
+    ctx.fillStyle="#fff";ctx.fillRect(food.x*cell+3,food.y*cell+3,cell-6,cell-6);
+    snake.forEach((s,i)=>{ctx.fillStyle=i===0?"#fff":"#aaa";ctx.fillRect(s.x*cell+2,s.y*cell+2,cell-4,cell-4)});
+  }
+  function reset(){snake=[{x:13,y:13},{x:12,y:13},{x:11,y:13}];dir={x:1,y:0};nextDir={x:1,y:0};score=0;scoreEl.textContent="0";overlay.classList.remove("open");start.textContent="Start game";placeFood();draw();}
+  function end(){running=false;clearInterval(timer);timer=null;start.textContent="Restart";overlay.classList.add("open");}
+  function step(){
+    dir=nextDir;
+    const head={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
+    if(head.x<0||head.x>=grid||head.y<0||head.y>=grid||snake.some(s=>s.x===head.x&&s.y===head.y)){end();return}
+    snake.unshift(head);
+    if(head.x===food.x&&head.y===food.y){score++;scoreEl.textContent=score;placeFood()}else snake.pop();
+    draw();
+  }
+  function startGame(){reset();running=true;start.textContent="Restart";clearInterval(timer);timer=setInterval(step,100)}
+  function key(e){
+    const k=e.key.toLowerCase(),map={arrowup:{x:0,y:-1},w:{x:0,y:-1},arrowdown:{x:0,y:1},s:{x:0,y:1},arrowleft:{x:-1,y:0},a:{x:-1,y:0},arrowright:{x:1,y:0},d:{x:1,y:0}};
+    if(k===" "){e.preventDefault();startGame();return}
+    const nd=map[k];if(!nd||!running)return;if(nd.x===-dir.x&&nd.y===-dir.y)return;nextDir=nd;e.preventDefault();
+  }
+  start.addEventListener("click",startGame);document.addEventListener("keydown",key);reset();
+})();
+</script>
+</body>
+</html>
