@@ -2,6 +2,7 @@
 builder = "railpack"
 
 [deploy]
+preDeployCommand = ["npm run db:migrate"]
 startCommand = "npm start"
 healthcheckPath = "/api/health"
 healthcheckTimeout = 30
