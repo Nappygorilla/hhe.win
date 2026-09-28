@@ -45,7 +45,7 @@
       help: "commands: status, product, catalog, build, clear",
       status: "systems: operational",
       product: "active product: roblox external",
-      catalog: "catalog: 1 live / 6 coming soon",
+      catalog: "catalog: 1 live / 7 coming soon",
       build: "storefront build: 2026.09",
       clear: ""
     };
