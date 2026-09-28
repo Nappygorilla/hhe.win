@@ -15,7 +15,29 @@
 <main>
 <section class="store-hero">
 <div class="hero-copy"><div class="eyebrow"><i></i> LUNA.WIN / STOREFRONT</div><h1>Tools for the<br><em>night shift.</em></h1><p>One place for Luna products, access information, service status, and account management.</p><div class="hero-actions"><a class="button primary" href="#products">Browse products <span>↗</span></a><a class="button ghost" href="status.html">System status</a></div></div>
-<div class="hero-panel"><div class="panel-top"><span>01 / LUNA SYSTEM</span><span class="live"><b></b> ONLINE</span></div><div class="panel-orbit"><div class="orbit o1 orbit-back"></div><div class="orbit o2"></div><div class="planet-glow"></div><div class="panel-moon"><span class="crater c1"></span><span class="crater c2"></span><span class="crater c3"></span><span class="crater c4"></span></div><div class="orbit o3 orbit-front"></div><div class="satellite"><span></span></div><span class="star s1"></span><span class="star s2"></span><span class="star s3"></span></div><div class="panel-bottom"><span>VERSION</span><strong>READY</strong></div></div>
+<div class="hero-panel"><div class="panel-top"><span>01 / LUNA SYSTEM</span><span class="live"><b></b> ONLINE</span></div><div class="panel-orbit"><div class="orbit o1 orbit-back"></div><div class="orbit o2"></div><div class="planet-glow"></div><div class="panel-moon-svg" aria-hidden="true">
+<svg viewBox="0 0 220 220" role="presentation">
+<defs>
+<radialGradient id="lunaLight" cx="30%" cy="24%" r="78%"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#dedede"/><stop offset=".65" stop-color="#989898"/><stop offset="1" stop-color="#303030"/></radialGradient>
+<filter id="lunaTexture"><feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="5" seed="18"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .7 0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+<filter id="lunaSoft"><feGaussianBlur stdDeviation="8"/></filter>
+<clipPath id="moonClip"><circle cx="110" cy="110" r="92"/></clipPath>
+</defs>
+<circle cx="110" cy="110" r="100" fill="#fff" opacity=".08" filter="url(#lunaSoft)"/>
+<circle cx="110" cy="110" r="92" fill="url(#lunaLight)"/>
+<g clip-path="url(#moonClip)" opacity=".42" filter="url(#lunaTexture)">
+<rect x="18" y="18" width="184" height="184" fill="#999"/>
+<circle cx="60" cy="70" r="13" fill="#555"/><circle cx="60" cy="70" r="8" fill="#777"/>
+<circle cx="133" cy="62" r="19" fill="#555"/><circle cx="130" cy="58" r="11" fill="#888"/>
+<circle cx="92" cy="126" r="22" fill="#555"/><circle cx="88" cy="121" r="13" fill="#858585"/>
+<circle cx="153" cy="137" r="10" fill="#444"/><circle cx="43" cy="143" r="17" fill="#666"/>
+<circle cx="122" cy="163" r="7" fill="#444"/><circle cx="169" cy="91" r="6" fill="#555"/>
+</g>
+<circle cx="110" cy="110" r="92" fill="none" stroke="#fff" stroke-opacity=".18"/>
+<path d="M45 38C73 17 116 12 151 29" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3"/>
+<ellipse cx="128" cy="138" rx="70" ry="50" fill="#000" opacity=".13"/>
+</svg>
+</div><div class="orbit o3 orbit-front"></div><div class="satellite"><span></span></div><span class="star s1"></span><span class="star s2"></span><span class="star s3"></span></div><div class="panel-bottom"><span>VERSION</span><strong>READY</strong></div></div>
 </section>
 <section id="products" class="store-section"><div class="section-label">01 / PRODUCTS</div><div class="section-title"><h2>Choose your<br><em>access.</em></h2><p>Product cards are ready for your real catalog, pricing, and availability.</p></div>
 <div class="product-grid">
