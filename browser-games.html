@@ -1,1 +1,59 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Browser Games — Luna.win</title><link rel="stylesheet" href="style.css?v=20260928-11"></head><body><header class="site-header"><div class="wrap nav-row"><a class="brand" href="index.html"><span class="moon"></span><span>Luna<span class="dim">.win</span></span></a><nav class="mainnav"><a href="index.html">Home</a><a href="features.html">Features</a><a class="active" href="browser-games.html">Browser Games</a><a href="store.html">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></nav><div class="nav-actions"><a class="login" href="login.html">Sign in</a><a class="nav-cta" href="key.html">Get Free Key <span>↗</span></a></div><details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="index.html">Home</a><a href="features.html">Features</a><a href="browser-games.html">Browser Games</a><a href="store.html">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details></div></header><main><section class="wrap section"><div class="label">BROWSER / LAB</div><div class="section-title"><h1>Play in the<br><em>browser.</em></h1><p>A dedicated space for lightweight browser experiences and experiments.</p></div><div class="store-grid"><article class="store-card live"><div class="store-top"><span>01 / LAB</span><b>AVAILABLE</b></div><div class="store-symbol">S</div><h3>Snake</h3><p>A lightweight browser game experience.</p><div class="store-bottom"><span>Browser</span><strong>Open ↗</strong></div></article><article class="store-card"><div class="store-top"><span>02 / LAB</span><b>COMING SOON</b></div><div class="store-symbol small">+</div><h3>More experiments</h3><p>Additional browser experiences can be added here over time.</p><div class="store-bottom"><span>Experimental</span><strong>Soon</strong></div></article><article class="store-card"><div class="store-top"><span>03 / LAB</span><b>COMING SOON</b></div><div class="store-symbol small">∞</div><h3>New experiences</h3><p>A flexible card layout for future games and experiments.</p><div class="store-bottom"><span>Browser</span><strong>Planned</strong></div></article></div></section></main><footer><div class="wrap"><div class="footer-bottom"><span>© 2026 Luna.win</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span></div></div></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Browser Games — Luna.win</title><link rel="stylesheet" href="style.css?v=20260928-11"></head><body><header class="site-header"><div class="wrap nav-row"><a class="brand" href="index.html"><span class="moon"></span><span>Luna<span class="dim">.win</span></span></a><nav class="mainnav"><a href="index.html">Home</a><a href="features.html">Features</a><a class="active" href="browser-games.html">Browser Games</a><a href="store.html">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></nav><div class="nav-actions"><a class="login" href="login.html">Sign in</a><a class="nav-cta" href="key.html">Get Free Key <span>↗</span></a></div><details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="index.html">Home</a><a href="features.html">Features</a><a href="browser-games.html">Browser Games</a><a href="store.html">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details></div></header><main><section class="wrap section"><div class="label">BROWSER / LAB</div><div class="section-title"><h1>Play in the<br><em>browser.</em></h1><p>A dedicated space for lightweight browser experiences and experiments.</p></div><div class="store-grid"><article class="store-card live"><div class="store-top"><span>01 / LAB</span><b>AVAILABLE</b></div><div class="store-symbol">S</div><h3>Snake</h3><p>A lightweight browser game experience.</p><div class="store-bottom"><span>Browser</span><button class="snake-launch" type="button">Launch ↗</button></div></article><article class="store-card"><div class="store-top"><span>02 / LAB</span><b>COMING SOON</b></div><div class="store-symbol small">+</div><h3>More experiments</h3><p>Additional browser experiences can be added here over time.</p><div class="store-bottom"><span>Experimental</span><strong>Soon</strong></div></article><article class="store-card"><div class="store-top"><span>03 / LAB</span><b>COMING SOON</b></div><div class="store-symbol small">∞</div><h3>New experiences</h3><p>A flexible card layout for future games and experiments.</p><div class="store-bottom"><span>Browser</span><strong>Planned</strong></div></article></div></section>
+<style>
+.snake-launch{font:inherit;font-weight:700;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.snake-launch:hover{text-decoration:underline}
+.snake-modal{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:24px;background:rgba(0,0,0,.82);backdrop-filter:blur(10px)}
+.snake-modal.open{display:grid}
+.snake-panel{width:min(560px,100%);background:#0b0b0b;border:1px solid #2a2a2a;border-radius:18px;padding:20px;box-shadow:0 24px 80px rgba(0,0,0,.55)}
+.snake-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.snake-head h2{margin:0}.snake-close{border:1px solid #333;background:#151515;color:#fff;border-radius:9px;padding:8px 11px;cursor:pointer}
+.snake-canvas-wrap{display:grid;place-items:center;background:#050505;border:1px solid #222;border-radius:12px;padding:10px}
+#snakeCanvas{width:min(440px,100%);height:auto;aspect-ratio:1;border-radius:8px;background:#050505}
+.snake-meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:#aaa;font-size:14px}
+.snake-start{border:1px solid #444;background:#fff;color:#000;border-radius:9px;padding:9px 14px;font-weight:700;cursor:pointer}
+.snake-help{margin:10px 0 0;color:#777;font-size:13px;text-align:center}
+</style>
+<div class="snake-modal" id="snakeModal" aria-hidden="true">
+  <div class="snake-panel" role="dialog" aria-modal="true" aria-labelledby="snakeTitle">
+    <div class="snake-head"><h2 id="snakeTitle">Snake</h2><button class="snake-close" id="snakeClose" type="button" aria-label="Close Snake">Close</button></div>
+    <div class="snake-canvas-wrap"><canvas id="snakeCanvas" width="440" height="440"></canvas></div>
+    <div class="snake-meta"><span>Score: <strong id="snakeScore">0</strong></span><button class="snake-start" id="snakeStart" type="button">Start game</button></div>
+    <p class="snake-help">Use Arrow Keys or WASD. Press Space to restart after game over.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const modal=document.getElementById("snakeModal"), canvas=document.getElementById("snakeCanvas"), ctx=canvas.getContext("2d");
+  const launch=document.querySelector(".snake-launch"), close=document.getElementById("snakeClose"), start=document.getElementById("snakeStart"), scoreEl=document.getElementById("snakeScore");
+  const grid=22, cell=canvas.width/grid;
+  let snake, food, dir, nextDir, score, timer, running=false;
+
+  function randomFood(){let p; do{p={x:Math.floor(Math.random()*grid),y:Math.floor(Math.random()*grid)}}while(snake.some(s=>s.x===p.x&&s.y===p.y)); return p}
+  function reset(){snake=[{x:11,y:11},{x:10,y:11},{x:9,y:11}];dir={x:1,y:0};nextDir={x:1,y:0};score=0;scoreEl.textContent=score;food=randomFood();draw();start.textContent="Start game"}
+  function draw(){
+    ctx.fillStyle="#050505";ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.strokeStyle="#111";ctx.lineWidth=1;
+    for(let i=1;i<grid;i++){ctx.beginPath();ctx.moveTo(i*cell,0);ctx.lineTo(i*cell,canvas.height);ctx.stroke();ctx.beginPath();ctx.moveTo(0,i*cell);ctx.lineTo(canvas.width,i*cell);ctx.stroke()}
+    ctx.fillStyle="#fff";ctx.fillRect(food.x*cell+3,food.y*cell+3,cell-6,cell-6);
+    snake.forEach((s,i)=>{ctx.fillStyle=i===0?"#fff":"#aaa";ctx.fillRect(s.x*cell+2,s.y*cell+2,cell-4,cell-4)});
+  }
+  function end(){running=false;clearInterval(timer);start.textContent="Restart";ctx.fillStyle="rgba(0,0,0,.62)";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle="#fff";ctx.textAlign="center";ctx.font="700 28px system-ui";ctx.fillText("Game over",canvas.width/2,canvas.height/2-8);ctx.font="14px system-ui";ctx.fillText("Press Restart or Space",canvas.width/2,canvas.height/2+22)}
+  function step(){
+    dir=nextDir;const head={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
+    if(head.x<0||head.x>=grid||head.y<0||head.y>=grid||snake.some(s=>s.x===head.x&&s.y===head.y)){end();return}
+    snake.unshift(head);
+    if(head.x===food.x&&head.y===food.y){score++;scoreEl.textContent=score;food=randomFood()}else snake.pop();
+    draw();
+  }
+  function begin(){reset();running=true;start.textContent="Restart";clearInterval(timer);timer=setInterval(step,105)}
+  function open(){modal.classList.add("open");modal.setAttribute("aria-hidden","false");reset();setTimeout(()=>close.focus(),0)}
+  function shut(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");running=false;clearInterval(timer)}
+  function key(e){
+    const k=e.key.toLowerCase(), map={arrowup:{x:0,y:-1},w:{x:0,y:-1},arrowdown:{x:0,y:1},s:{x:0,y:1},arrowleft:{x:-1,y:0},a:{x:-1,y:0},arrowright:{x:1,y:0},d:{x:1,y:0}};
+    if(k===" "&&modal.classList.contains("open")){e.preventDefault();begin();return}
+    const nd=map[k];if(!nd||!running)return;if(nd.x===-dir.x&&nd.y===-dir.y)return;nextDir=nd;e.preventDefault()
+  }
+  launch.addEventListener("click",open);close.addEventListener("click",shut);start.addEventListener("click",begin);document.addEventListener("keydown",key);
+  modal.addEventListener("click",e=>{if(e.target===modal)shut()});reset();
+})();
+</script></main><footer><div class="wrap"><div class="footer-bottom"><span>© 2026 Luna.win</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span></div></div></footer></body></html>
