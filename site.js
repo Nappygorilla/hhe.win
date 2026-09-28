@@ -72,6 +72,19 @@
     });
   };
 
+
+
+  const syncActiveNavigation = () => {
+    const current = (window.location.pathname.split("/").pop() || "index.html").split("#")[0] || "index.html";
+    document.querySelectorAll(".mainnav a, .mobile-menu-panel a").forEach((link) => {
+      const raw = link.getAttribute("href") || "";
+      const target = raw.split("#")[0].split("/").pop() || "index.html";
+      const isNavPage = /^(index|features|browser-games|store|about|updates|faq|contact|login|register|key|account|status|legal|privacy|terms|roblox)\.html$/i.test(target);
+      if (!isNavPage) return;
+      link.classList.toggle("active", target.toLowerCase() === current.toLowerCase());
+    });
+  };
+
   window.addEventListener("scroll", updateProgress, { passive: true });
   window.addEventListener("resize", updateProgress);
   window.addEventListener("pointermove", updateGlow, { passive: true });
@@ -79,4 +92,5 @@
   updateProgress();
   enableCardMotion();
   bootTerminal();
+  syncActiveNavigation();
 })();
