@@ -78,3 +78,30 @@ footer .brand{margin-bottom:16px}footer .footer-links{display:flex;gap:17px;flex
 input,textarea,select{transition:border-color .2s,box-shadow .2s,background .2s}input:hover,textarea:hover,select:hover{border-color:#3a3a3a}
 @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.cta{margin-bottom:65px}}
 @media(max-width:620px){.grid{grid-template-columns:1fr}.cta{padding:28px 23px;display:block}.cta h2{font-size:45px}.status-box{grid-template-columns:1fr}.status-box>div,.status-box>div:nth-child(even),.status-box>div:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #1b1b1b}.status-box>div:last-child{border-bottom:0}.legal>h3{margin-top:30px}}
+
+
+/* LUNA 10/10 EXPERIENCE PASS */
+:focus-visible{outline:2px solid #eee;outline-offset:4px}
+button,.button,.mainnav a,.mobile-menu summary,.store-filter{cursor:pointer}
+body{animation:lunaPageIn .42s ease both}
+@keyframes lunaPageIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.site-header{box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.mainnav a{transition:color .2s,transform .2s}.mainnav a:hover{transform:translateY(-1px)}
+.mobile-menu-panel a.active{background:#eee;color:#050505}
+.button{min-height:42px}
+.store-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 16px;padding:10px;border:1px solid #202020;background:#080808;border-radius:12px}
+.store-filters{display:flex;gap:6px;flex-wrap:wrap}
+.store-filter{border:1px solid transparent;background:transparent;color:#6d6d68;padding:9px 11px;border-radius:8px;font:8px var(--mono);text-transform:uppercase;letter-spacing:.08em;transition:.2s}
+.store-filter:hover{color:#eee;border-color:#2b2b2b;background:#0d0d0d}
+.store-filter.active{color:#050505;background:#eee;border-color:#eee}
+.store-search{width:190px;height:36px;border:1px solid #292929;background:#050505;color:#eee;border-radius:8px;padding:0 11px;font:9px var(--mono)}
+.store-search::placeholder{color:#4f4f4a}.store-search:focus{outline:0;border-color:#777}
+.store-meta{display:flex;justify-content:space-between;gap:12px;margin-bottom:18px;color:#555;font:8px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.store-grid [hidden]{display:none!important}
+.store-feature{display:grid;grid-template-columns:1.35fr .65fr;gap:0;margin-bottom:22px;border:1px solid #282828;background:radial-gradient(circle at 83% 30%,#191919,#090909 58%);border-radius:14px;overflow:hidden}
+.store-feature-copy{padding:27px}.store-feature-copy h3{font-size:34px;letter-spacing:-.06em;margin:12px 0 8px}.store-feature-copy p{max-width:650px;color:#70706b;font-size:11px;line-height:1.8}
+.store-feature-side{border-left:1px solid #222;display:flex;flex-direction:column;justify-content:center;padding:27px}.store-feature-side .big-price{font-size:42px;font-weight:800;letter-spacing:-.07em}.store-feature-side small{display:block;color:#555;font:8px var(--mono);text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
+.notice strong{color:#ccc}
+@media(max-width:900px){.store-toolbar{align-items:stretch;flex-direction:column}.store-search{width:100%}.store-feature{grid-template-columns:1fr}.store-feature-side{border-left:0;border-top:1px solid #222}}
+@media(max-width:620px){.store-feature-copy,.store-feature-side{padding:20px}.store-feature-copy h3{font-size:28px}.store-feature-side .big-price{font-size:36px}.store-meta{display:block}.store-meta span{display:block;margin-top:5px}}
+@media(prefers-reduced-motion:reduce){body{animation:none}}
