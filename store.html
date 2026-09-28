@@ -1,42 +1,39 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Store — Luna.win</title><link rel="stylesheet" href="style.css?v=20260928-13"><style>
-.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:44px}
-.product-tile{min-height:270px;border:1px solid #222;background:#080808;padding:22px;display:flex;flex-direction:column;transition:.2s}
-.product-tile:hover{transform:translateY(-3px);border-color:#3a3a3a}
-.product-tile.featured{background:linear-gradient(145deg,#121212,#080808);border-color:#383838}
-.product-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.product-icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid #292929;background:#101010;font-weight:800;font-size:18px}
-.badge{font:8px var(--mono);text-transform:uppercase;padding:6px 8px;border:1px solid #343434;color:#aaa}
-.badge.live{color:#eee;border-color:#555}
-.product-tile small{display:block;margin-top:28px;font:8px var(--mono);color:#555;text-transform:uppercase;letter-spacing:.08em}
-.product-tile h3{margin:7px 0 5px;font-size:26px;letter-spacing:-.055em}
-.product-tile p{margin:0;color:#686863;font-size:11px;line-height:1.7;max-width:460px}
-.product-meta{margin-top:auto;padding-top:17px;border-top:1px solid #1b1b1b;display:flex;justify-content:space-between;align-items:center;font:8px var(--mono);text-transform:uppercase;color:#555}
-.product-meta strong{color:#aaa;font-weight:500}.product-link{display:inline-flex;margin-top:13px;align-items:center;justify-content:center;border:1px solid #333;padding:11px 13px;font:800 8px var(--sans);text-transform:uppercase}.product-link:hover{background:#eee;color:#050505;border-color:#eee}
-.catalog-note{margin-top:30px;border:1px solid #1e1e1e;background:#080808;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:30px}.catalog-note h3{margin:7px 0;font-size:24px;letter-spacing:-.05em}.catalog-note p{margin:0;color:#666;font-size:11px}
-@media(max-width:920px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-note{display:block}.catalog-note .button{margin-top:18px}}@media(max-width:700px){.product-grid{grid-template-columns:1fr}.catalog-note{display:block}.catalog-note .button{margin-top:18px}}
- .price-note{margin-top:-8px;margin-bottom:12px;color:#aaa;font:8px var(--mono);text-transform:uppercase;letter-spacing:.08em}</style></head><body><header class="site-header"><div class="wrap nav-row"><a class="brand" href="index.html"><span class="moon"></span><span>Luna<span class="dim">.win</span></span></a><nav class="mainnav"><a href="index.html">Home</a><a href="features.html">Features</a><a href="browser-games.html">Browser Games</a><a class="active" href="index.html#store">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></nav><div class="nav-actions"><a class="login" href="login.html">Sign in</a><a class="nav-cta" href="key.html">Get Free Key <span>↗</span></a></div><details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="index.html">Home</a><a href="features.html">Features</a><a href="browser-games.html">Browser Games</a><a href="index.html#store">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="login.html">Sign in</a><a href="key.html">Get Free Key</a></div></details></div></header><style>
-.store-intro{padding:96px 0 40px;text-align:center}.store-intro h1{font-size:clamp(48px,7vw,76px);line-height:.88;letter-spacing:-.08em;margin:16px 0}.store-intro h1 em{font-style:normal;color:#70706b}.store-intro p{max-width:650px;margin:0 auto;color:#777;font-size:12px;line-height:1.8}
-.platform-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:30px 0 90px}
-.platform-card{position:relative;min-height:430px;padding:28px;border:1px solid #232323;border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.047),rgba(255,255,255,.012));display:flex;flex-direction:column;overflow:hidden;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}.platform-card:before{content:"LUNA.WIN";position:absolute;right:18px;top:18px;font:800 7px var(--mono);letter-spacing:.13em;color:#53534e}.platform-card:hover{transform:translateY(-5px);border-color:#3b3b3b;box-shadow:0 30px 85px rgba(0,0,0,.45)}
-.platform-icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid #2b2b2b;background:#101010;font-size:18px;font-weight:800;margin-bottom:20px}
-.platform-badge{display:inline-flex;width:max-content;padding:6px 10px;border-radius:999px;border:1px solid #343434;font:8px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:#aaa}
-.platform-card.live .platform-badge{color:#f5f5f5;border-color:#575757}
-.platform-card h2{font-size:27px;letter-spacing:-.055em;margin:14px 0 6px}.platform-card p{margin:0;color:#6d6d68;font-size:10px;line-height:1.8}
-.platform-price{font-size:30px;font-weight:800;letter-spacing:-.06em;margin:17px 0 13px}.platform-price small{font:8px var(--mono);color:#555;letter-spacing:.1em}
-.platform-features{margin:0 0 24px;padding:0;list-style:none;display:grid;gap:9px;flex:1}.platform-features li{display:flex;gap:8px;align-items:center;color:#8a8a85;font-size:10px}.platform-features li:before{content:"✓";font-weight:800;color:#eee}
-.platform-action{display:flex;width:100%;align-items:center;justify-content:center;border:1px solid #343434;padding:12px 14px;font:800 8px var(--sans);text-transform:uppercase}.platform-action.primary{background:#eee;color:#050505;border-color:#eee}.platform-action:hover{background:#eee;color:#050505;border-color:#eee}
-.store-note{border-top:1px solid #1b1b1b;padding:34px 0 90px}.store-note-inner{border:1px solid #232323;background:#080808;padding:27px;display:flex;justify-content:space-between;align-items:center;gap:25px}.store-note h3{margin:8px 0 4px;font-size:24px;letter-spacing:-.05em}.store-note p{margin:0;color:#666;font-size:11px}
-@media(max-width:980px){.platform-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.platform-grid{grid-template-columns:1fr}.store-intro{padding-top:70px}.store-note-inner{display:block}.store-note-inner .button{margin-top:16px}}
-</style><style>
-.store-page-title{padding-top:96px}.store-page-title .section-title{margin-bottom:25px}
-<style>.product-price{font-size:34px;font-weight:800;letter-spacing:-.06em;margin:17px 0 10px}.product-price span{font:8px var(--mono);color:#555;letter-spacing:.1em}</style></style><main>
-<section class="section">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Luna.win — premium storefront for Luna Roblox External and future gaming products.">
+<meta name="theme-color" content="#050505">
+<title>Store — Luna.win</title>
+<link rel="stylesheet" href="style.css?v=20260928-10">
+<style>.product-price{font-size:34px;font-weight:800;letter-spacing:-.06em;margin:17px 0 10px}.product-price span{font:8px var(--mono);color:#555;letter-spacing:.1em} .price-note{margin-top:-8px;margin-bottom:12px;color:#aaa;font:8px var(--mono);text-transform:uppercase;letter-spacing:.08em}</style></head>
+<body>
+<div class="scroll-progress" data-scroll-progress></div>
+<div class="cursor-glow" data-cursor-glow></div>
+
+<div class="topline"><div class="wrap top-line-inner"><span><i class="status-dot"></i> Luna.win systems online</span><span>Independent software · focused interfaces</span><a href="status.html">System status ↗</a></div></div>
+<header class="site-header"><div class="wrap nav-row"><a class="brand" href="index.html"><span class="moon"></span><span>Luna<span class="dim">.win</span></span></a><nav class="mainnav" aria-label="Primary navigation">
+<a class="active" href="index.html">Home</a>
+<a class="" href="features.html">Features</a>
+<a class="" href="browser-games.html">Browser Games</a>
+<a class="" href="index.html#store">Store</a>
+<a class="" href="about.html">About</a>
+<a class="" href="updates.html">Updates</a>
+<a class="" href="faq.html">FAQ</a>
+<a class="" href="contact.html">Contact</a>
+</nav><div class="nav-actions"><a class="login" href="login.html">Sign in</a><a class="nav-cta" href="key.html">Get Free Key <span>↗</span></a></div>
+<details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="index.html">Home</a><a href="features.html">Features</a><a href="browser-games.html">Browser Games</a><a href="index.html#store">Store</a><a href="about.html">About</a><a href="updates.html">Updates</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="login.html">Sign in</a><a href="key.html">Get Free Key</a></div></details></div></header>
+
+<main>
+<section class="section" id="store">
   <div class="wrap">
     <div class="section-title">
       <span class="mono">03 / STORE</span>
       <h2>The lineup.</h2>
       <p>Current and future categories are separated clearly so customers know what is actually available.</p>
     </div>
+
     <div class="store-grid">
       <a class="store-card live" href="roblox.html">
         <div class="store-top"><span>01</span><b>AVAILABLE</b></div>
@@ -44,20 +41,28 @@
         <div><span class="mono">ROBLOX</span><h3>Roblox External</h3><p>Current Luna product.</p><div class="product-price">FREE <span>PRODUCT</span></div><div class="price-note">Lifetime key: $5.00</div></div>
         <div class="store-bottom"><span>VIEW PRODUCT</span><strong>↗</strong></div>
       </a>
-      <div class="store-card"><div class="store-top"><span>02</span><b>COMING SOON</b></div><div class="store-symbol">C</div><div><span class="mono">CS2</span><h3>CS2</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
-      <div class="store-card"><div class="store-top"><span>03</span><b>COMING SOON</b></div><div class="store-symbol">F</div><div><span class="mono">FORTNITE</span><h3>Fortnite</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
+      <div class="store-card"><div class="store-top"><span>02</span><b>COMING SOON</b></div><div class="store-symbol">F</div><div><span class="mono">FORTNITE</span><h3>Fortnite</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
+      <div class="store-card"><div class="store-top"><span>03</span><b>COMING SOON</b></div><div class="store-symbol">C</div><div><span class="mono">CS2</span><h3>CS2</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
       <div class="store-card"><div class="store-top"><span>04</span><b>COMING SOON</b></div><div class="store-symbol small">COD</div><div><span class="mono">CALL OF DUTY</span><h3>Call of Duty</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
       <div class="store-card"><div class="store-top"><span>05</span><b>COMING SOON</b></div><div class="store-symbol">T</div><div><span class="mono">SPOOFER</span><h3>Temp Spoofer</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
       <div class="store-card"><div class="store-top"><span>06</span><b>COMING SOON</b></div><div class="store-symbol">P</div><div><span class="mono">SPOOFER</span><h3>Perm Spoofer</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
       <div class="store-card"><div class="store-top"><span>07</span><b>COMING SOON</b></div><div class="store-symbol">F</div><div><span class="mono">FIVEM</span><h3>FiveM</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
+    
+      <div class="store-card"><div class="store-top"><span>08</span><b>COMING SOON</b></div><div class="store-symbol">G</div><div><span class="mono">GORILLA TAG</span><h3>Gorilla Tag</h3><p>Future category.</p></div><div class="store-bottom"><span>NOT AVAILABLE</span><strong>—</strong></div></div>
     </div>
   </div>
 </section>
-<section class="section">
-  <div class="wrap feature-grid">
-    <a class="feature-block" href="faq.html"><span class="mono">04 / HELP</span><h3>Answers first.</h3><p>Put common storefront questions where customers can actually find them.</p><strong>Open FAQ ↗</strong></a>
-    <a class="feature-block" href="contact.html"><span class="mono">05 / SUPPORT</span><h3>Need help?</h3><p>Give account and product questions a direct route to support.</p><strong>Open support ↗</strong></a>
-    <a class="feature-block" href="login.html"><span class="mono">06 / ACCOUNT</span><h3>Your access.</h3><p>Sign in to the customer area when the account backend is connected.</p><strong>Open account ↗</strong></a>
+
+</main>
+<footer>
+  <div class="wrap footer-main">
+    <div class="footer-brand"><a class="brand" href="index.html"><span class="moon"></span><span>Luna<span class="dim">.win</span></span></a><p>Software, without the noise.</p></div>
+    <div><span class="mono">STORE</span><a href="#store">Products</a><a href="status.html">Status</a></div>
+    <div><span class="mono">ACCOUNT</span><a href="login.html">Sign in</a><a href="register.html">Register</a><a href="contact.html">Support</a></div>
+    <div><span class="mono">COMPANY</span><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
   </div>
-</section>
-</main><footer><div class="wrap"><div class="footer-bottom"><span>© 2026 Luna.win</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span></div></div></footer></body></html>
+  <div class="wrap footer-bottom"><span>© 2026 Luna.win</span><span>Built after dark.</span></div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
