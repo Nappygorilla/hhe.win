@@ -5,4 +5,4 @@ Disallow: /login.html
 Disallow: /register.html
 Disallow: /account.html
 
-Sitemap: https://luna.win/sitemap.xml
+Sitemap: https://nappygorilla.github.io/Luna.win/sitemap.xml
