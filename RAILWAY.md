@@ -22,7 +22,7 @@ Create a service from the GitHub repository.
 Variables:
 - `DATABASE_URL` — reference the Railway Postgres connection string
 - `NODE_ENV=production`
-- `CORS_ORIGIN=https://luna.win`
+- `CORS_ORIGIN=https://nappygorilla.github.io/Luna.win`
 
 Healthcheck: `GET /api/health`
 Endpoints:
