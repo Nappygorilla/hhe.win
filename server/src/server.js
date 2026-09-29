@@ -6,7 +6,7 @@ import { checkDatabase } from "./db.js";
 
 const app = express();
 const port = Number(process.env.PORT || 8080);
-const corsOrigin = process.env.CORS_ORIGIN || "https://luna.win";
+const corsOrigin = process.env.CORS_ORIGIN || "https://nappygorilla.github.io";
 
 app.disable("x-powered-by");
 app.use(helmet());
